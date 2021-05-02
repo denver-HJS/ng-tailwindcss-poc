@@ -1,13 +1,13 @@
-<mat-sidenav-container class="app-container">
+<mat-sidenav-container class="app-container dark">
   <mat-sidenav #sidenav
-               [mode]="sideNavMode"
-               class="w-3/12">
+               [mode]="sideNavMode$ | async"
+               class="w-80">
     <div class="flex flex-col">
-      <nav>
-        <a class="block cursor-pointer p-4 bg-gray-700 text-center hover:bg-gray-500 hover:text-black">
+      <nav class="side-navigation">
+        <a>
           Sly
         </a>
-        <a class="block cursor-pointer p-4 bg-gray-700 text-center hover:bg-gray-500 hover:text-black">
+        <a>
           Essie
         </a>
       </nav>
@@ -21,7 +21,7 @@
         <mat-icon>menu</mat-icon>
       </button>
       <div class="flex-grow flex-row">
-        <h1 class="text-center">Sly &amp; Essie</h1>
+        <h1 class="text-center m-0">Sly &amp; Essie</h1>
       </div>
     </div>
     <div class="grid grid-cols-2 gap-12 justify-items-center">
