@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import { LayoutModule } from '@angular/cdk/layout';
 
 
 
@@ -12,12 +13,14 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule
   ],
   exports: [
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    HttpClientModule,
+    LayoutModule
   ]
 })
 export class CoreModule { }
