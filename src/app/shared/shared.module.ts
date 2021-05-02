@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { GalleryContainerComponent } from './gallery/gallery-container/gallery-container.component';
+import { MaterialModule } from './material.module';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    GalleryContainerComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule
   ]
 })
 export class SharedModule { }

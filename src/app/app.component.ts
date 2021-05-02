@@ -1,14 +1,15 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
   static readonly desktopBreakpoints = [Breakpoints.XLarge, Breakpoints.Large, Breakpoints.Medium];
 
   title = 'ng-tailwindcss-poc';
@@ -21,6 +22,9 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   async ngOnInit() {
     this.breakpoints$.observe(AppComponent.desktopBreakpoints)
+      .pipe(
+        delay(100)
+      )
       .subscribe(async ( desktopBreakpointEvent: BreakpointState) => {
         if (desktopBreakpointEvent.matches) {
           this.sideNavMode$.next('side');
@@ -30,9 +34,5 @@ export class AppComponent implements OnInit, AfterViewInit {
           await this.sidenav.close();
         }
       });
-  }
-
-  async ngAfterViewInit() {
-    await this.sidenav.open();
   }
 }
