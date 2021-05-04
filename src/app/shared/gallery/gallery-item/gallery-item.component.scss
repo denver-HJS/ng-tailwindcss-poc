@@ -4,4 +4,6 @@
 
 .gallery-image-raw {
   margin: 0;
+
+  @apply border-2 border-yellow-100 border-opacity-30
 }

@@ -1,5 +1,6 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 justify-items-center p-2">
   <app-gallery-item *ngFor="let imageContent of galleryImages"
-                    [content]="imageContent">
+                    [content]="imageContent"
+                    class="transform ease-in duration-200 hover:-translate-y-1 hover:scale-110">
   </app-gallery-item>
 </div>
