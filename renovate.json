@@ -1,5 +1,6 @@
 {
   "extends": [
     "config:base"
-  ]
+  ],
+  "npmrc": "registry=https://registry.npmjs.org/\naudit=true\naudit-level=high"
 }
